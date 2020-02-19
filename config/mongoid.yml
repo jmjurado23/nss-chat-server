@@ -1,0 +1,23 @@
+development:
+  clients:
+    default:
+      database: chat_nss_server_development
+      hosts:
+        - localhost:27017
+      options:
+  options:
+
+production:
+  clients:
+    default:
+      database: chat_nss_server_production
+      hosts:
+        - localhost:27017
+      options:
+test:
+  clients:
+    default:
+      database: chat_nss_server_test
+      hosts:
+        - localhost:27017
+      options:
