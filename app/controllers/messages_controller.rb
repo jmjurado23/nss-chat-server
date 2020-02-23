@@ -1,11 +1,10 @@
-class WallpapersController < ApplicationController
+class MessagesController < ApplicationController
   before_filter :determine_scope,     only: :index
-  before_filter :determine_filter,    only: :index
 
   respond_to :html, :json
 
   def index
-    @messages = @messages.where(@scope)
+    @messages = @scope
     respond_to do |format|
       format.json { render :json => @messages.as_api_response(:general) }
     end
@@ -13,9 +12,9 @@ class WallpapersController < ApplicationController
 
   def create
     @message = Message.new( wallpapers_params )
-    @wallpaper.save
+    @message.save
     respond_to do |format|
-      format.json { render :json => @messages.as_api_response(:general) }
+      format.json { render :json => @message.as_api_response(:general) }
     end
   end
 
@@ -23,7 +22,7 @@ class WallpapersController < ApplicationController
 
   def wallpapers_params
     params[:message][:date] = DateTime.now.strftime('%d/%m/%y %H:%M:%S')
-    params.require(:message).permit(:user_avatar, :user_name, :date, :type, :message)
+    params.require(:message).permit(:user_avatar, :user_name, :date, :type, :message, :session_id)
   end
 
   def determine_scope

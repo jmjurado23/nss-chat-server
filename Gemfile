@@ -14,6 +14,7 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'responders'
 gem 'will_paginate_mongoid'
 gem 'mongoid-autoinc'
+gem 'rack-cors'
 
 group :development, :test do
 end

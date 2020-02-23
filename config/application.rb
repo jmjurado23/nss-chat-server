@@ -31,5 +31,11 @@ module DressWallServer
     #
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.assets.paths << Rails.root.join("vendor", "assets", "images")
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options, :destroy, :delete]
+      end
+    end
   end
 end

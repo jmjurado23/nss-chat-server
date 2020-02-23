@@ -1,4 +1,4 @@
-module MessageTemplates
+module SessionTemplates
   extend ActiveSupport::Concern
 
   included do
@@ -6,13 +6,9 @@ module MessageTemplates
       t.add lambda { |w|
         w.id.to_s
       }, as: :id
-      t.add :message
       t.add :user_name
       t.add :user_avatar
-      t.add :session_id
-      t.add :date
-      t.add :type
-      t.add :code
+      t.add :created_at
     end
   end
 end
