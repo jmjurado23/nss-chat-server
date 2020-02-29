@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'puma', '3.12.0'
+gem 'puma', '3.12.3'
 gem 'acts_as_api'
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
